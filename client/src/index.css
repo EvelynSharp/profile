@@ -87,7 +87,7 @@ h1 {
 
 /* styles for about page */
 
-.about {
+.about, .contact {
   background-color: rgba(9, 9, 9, 1);
 }
 
@@ -130,17 +130,20 @@ h1 {
   width: 70vw;
 }
 
-/*.projects img {
-  height: 50%;
-  width: 50%;
-}*/
 
 
+/* styles for contact page */
+
+.contact h1 {
+  font-size: 3em;
+  padding: 4em 0 0.5em 0;
+}
+
+.contactBtn{
+  margin-right: 4% !important;
+  font-size: 1.2em !important;
+  padding-bottom: 0.4em !important;
+}
 
 
-
-
-
-
-
-/* styles for contacts page */
+/* end*/

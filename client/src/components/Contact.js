@@ -1,11 +1,26 @@
 import React from 'react';
+import { Button, Icon, Grid } from 'semantic-ui-react';
 
 const Contact = () => {
 
   return(
     <div className='compContainer'>
-      <div style={{border: '1px solid grey'}}>
-        Contact
+      <div className='contact'>
+        <h1>Contact Me</h1>
+        <Grid>
+          <Grid.Column width={4} />
+          <Grid.Column width={8} style={{ textAlign: 'center'}}>
+            <Button className='contactBtn'>
+              <Icon name='linkedin square' size='big' style={{ marginBottom: '5px'}}/>
+              <span>LINKEDIN</span>
+            </Button>
+            <Button className='contactBtn'>
+              <Icon name='github' size='big' style={{ marginBottom: '5px'}}/>
+              <span>GITHUB</span>
+            </Button>
+          </Grid.Column>
+          <Grid.Column width={4} />
+        </Grid>
       </div>
     </div>
   )
