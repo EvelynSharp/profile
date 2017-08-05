@@ -11,7 +11,7 @@ const Projects = () => {
         </div>
         <Carousel className='carouselCon'>
           <Carousel.Item>
-            <a href='https://eventech-capstone.herokuapp.com/' target="_blank">
+            <a href='https://eventech-capstone.herokuapp.com/' target='_blank'>
               <img alt='900x500' src={projectImgs[0].src}/>
             </a>
           </Carousel.Item>
