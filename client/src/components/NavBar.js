@@ -2,14 +2,14 @@ import React from 'react';
 import { Menu } from 'semantic-ui-react';
 
 class NavBar extends React.Component {
-  state = { activeItem: 'Home'}
+  state = { activeItem: 'HOME'}
 
 
   items = [
-    {name: 'Home', key: 'Home'},
-    {name: 'About', key: 'About'},
-    {name: 'Projects', key: 'Projects'},
-    {name: 'Contact', key: 'Contact'}
+    {name: 'HOME', key: 'Home'},
+    {name: 'ABOUT', key: 'About'},
+    {name: 'PROJECTS', key: 'Projects'},
+    {name: 'CONTACT', key: 'Contact'}
   ]
 
   render() {

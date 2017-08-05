@@ -17,11 +17,11 @@ class SlideContainer extends React.Component {
       this.setState( { height } )
     }
   }
-
+    // <div className='slideCon' style={{ height: height + 'px' }}>
   render() {
     let { height } = this.state;
     return(
-      <div style={{ height: height + 'px', border: '1px solid red'}}>
+      <div className='slideCon'>
         { this.props.children }
       </div>
     )
