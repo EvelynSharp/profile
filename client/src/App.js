@@ -9,7 +9,7 @@ import SlideContainer from './components/SlideContainer';
 const App = () => (
   <div>
     <NavBar />
-    <SlideContainer> <Home /> </SlideContainer>
+    <SlideContainer> <Home page={'home'}/> </SlideContainer>
     <SlideContainer> <About /> </SlideContainer>
     <SlideContainer> <Projects /> </SlideContainer>
     <SlideContainer> <Contact /> </SlideContainer>
