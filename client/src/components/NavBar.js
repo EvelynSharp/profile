@@ -3,14 +3,17 @@ import { Menu } from 'semantic-ui-react';
 
 class NavBar extends React.Component {
   state = { activeItem: 'ABOUT'}
-
-
+  
   items = [
     {name: 'HOME', key: 'Home'},
     {name: 'ABOUT', key: 'About'},
     {name: 'PROJECTS', key: 'Projects'},
     {name: 'CONTACT', key: 'Contact'}
   ]
+
+  changeActive = ( activeItem ) => {
+    this.setState({ activeItem });
+  }
 
   render() {
     let { activeItem } = this.state;
@@ -20,11 +23,10 @@ class NavBar extends React.Component {
            <Menu.Menu position='right' className='navMenu' >
              { this.items.map( item => {
                  return (
-                   <a href={`#${item.name}`}>
+                   <a href={`#${item.name}`} key={item.key}>
                      <Menu.Item
                        className='navItem'
                        name={item.name}
-                       key={item.key}
                        active={activeItem === item.name}
                      >
                       {item.name}

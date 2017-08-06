@@ -9,6 +9,8 @@
     "react": "^15.5.4",
     "react-bootstrap": "^0.31.2",
     "react-dom": "^15.5.4",
+    "react-visibility-sensor": "^3.10.1",
+    "react-within-viewport": "^1.2.4",
     "semantic-ui-react": "^0.71.3"
   },
   "proxy": "http://localhost:3001",
