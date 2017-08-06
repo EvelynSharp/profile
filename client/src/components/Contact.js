@@ -29,7 +29,7 @@ const Contact = () => {
           <Grid.Column width={4} />
         </Grid>
         <div className='switchCon' style={{ marginTop: '5%'}}>
-          <Arrow end={true}/>
+          <Arrow page='CONTACT'/>
         </div>
       </div>
     </div>

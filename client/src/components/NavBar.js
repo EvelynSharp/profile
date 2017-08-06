@@ -20,16 +20,16 @@ class NavBar extends React.Component {
            <Menu.Menu position='right' className='navMenu' >
              { this.items.map( item => {
                  return (
-                   <Menu.Item
-                     className='navItem'
-                     name={item.name}
-                     key={item.key}
-                     active={activeItem === item.name}
-                   >
-                     <a href={`#${item.name}`}>
+                   <a href={`#${item.name}`}>
+                     <Menu.Item
+                       className='navItem'
+                       name={item.name}
+                       key={item.key}
+                       active={activeItem === item.name}
+                     >
                       {item.name}
-                     </a>
-                   </Menu.Item>
+                     </Menu.Item>
+                   </a>
                  )
                })
              }
