@@ -1,18 +1,9 @@
 import React from 'react';
 import Arrow from './Arrow';
-import WithinViewport from 'react-within-viewport'
 
 
-class About extends React.Component {
 
-  componentDidMount = () => {
-    let {inViewport, setActivePage} = this.props
-    if( typeof window !== 'undefined' )
-      window.addEventListener('scroll', () => {setActivePage('about', this.props.inViewport)}, true)
-  }
-
-  render() {
-    // console.log(this.props.inViewport)
+const About = () => {
     return(
       <div className='compContainer'>
         <div className='about' id='ABOUT'>
@@ -29,8 +20,6 @@ class About extends React.Component {
         </div>
       </div>
     )
-  }
-
 }
 
-export default WithinViewport()(About);
+export default About;
