@@ -2,14 +2,20 @@ import React from 'react';
 import { Menu } from 'semantic-ui-react';
 
 class NavBar extends React.Component {
-  state = { activeItem: 'ABOUT'}
-  
+  state = { activeItem: 'HOME'}
+
   items = [
     {name: 'HOME', key: 'Home'},
     {name: 'ABOUT', key: 'About'},
     {name: 'PROJECTS', key: 'Projects'},
     {name: 'CONTACT', key: 'Contact'}
   ]
+
+  componentWillReceiveProps = () => {
+    let { activePage } = this.props;
+    if (activePage)
+      this.changeActive(activePage)
+  }
 
   changeActive = ( activeItem ) => {
     this.setState({ activeItem });

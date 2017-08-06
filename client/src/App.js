@@ -5,6 +5,7 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import SlideContainer from './components/SlideContainer'
+import _ from 'lodash';
 
 class App extends React.Component {
   defaultData = { home: true, about: false, projects: false, contact: false }
@@ -19,13 +20,15 @@ class App extends React.Component {
   }
 
   findActivePage = () => {
-
+    const nameMap = ['HOME', 'ABOUT', 'PROJECTS', 'CONTACT'];
+    let trueIndex = _.toArray({...this.state}).indexOf(true);
+    return nameMap[trueIndex];
   }
 
   render() {
     return (
       <div>
-        <NavBar />
+        <NavBar activePage={this.findActivePage()}/>
         <SlideContainer setActivePage={this.setActivePage} page='home'><Home page={'home'}/></SlideContainer>
         <SlideContainer setActivePage={this.setActivePage} page='about'><About/></SlideContainer>
         <SlideContainer setActivePage={this.setActivePage} page='projects'><Projects/></SlideContainer>
