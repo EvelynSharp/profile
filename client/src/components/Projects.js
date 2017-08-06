@@ -1,6 +1,8 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
 import { projectImgs } from '../projectImgs';
+import Arrow from './Arrow';
+
 
 const Projects = () => {
   return(
@@ -16,6 +18,9 @@ const Projects = () => {
             </a>
           </Carousel.Item>
         </Carousel>
+        <div className='switchCon' style={{ marginTop: '2%'}}>
+          <Arrow />
+        </div>
       </div>
     </div>
   )

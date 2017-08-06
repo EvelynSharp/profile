@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Icon, Grid } from 'semantic-ui-react';
+import Arrow from './Arrow';
 
 const Contact = () => {
 
@@ -27,6 +28,9 @@ const Contact = () => {
           </Grid.Column>
           <Grid.Column width={4} />
         </Grid>
+        <div className='switchCon' style={{ marginTop: '5%'}}>
+          <Arrow end={true}/>
+        </div>
       </div>
     </div>
   )

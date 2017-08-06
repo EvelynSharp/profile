@@ -1,5 +1,6 @@
 import React from 'react';
 import { List } from 'semantic-ui-react';
+import Arrow from './Arrow';
 
 const About = () => {
   return(
@@ -12,6 +13,9 @@ const About = () => {
           I have also been learning new skills online and working on a few personal projects. \
          I’m looking for an opportunity on front end web development. ' }
         </p>
+        <div className='switchCon'>
+          <Arrow />
+        </div>
       </div>
     </div>
   )
