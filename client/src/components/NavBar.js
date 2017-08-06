@@ -2,7 +2,7 @@ import React from 'react';
 import { Menu } from 'semantic-ui-react';
 
 class NavBar extends React.Component {
-  state = { activeItem: 'HOME'}
+  state = { activeItem: 'ABOUT'}
 
 
   items = [
@@ -15,9 +15,8 @@ class NavBar extends React.Component {
   render() {
     let { activeItem } = this.state;
     return(
-       <div className='nav-bar'>
+       <div className='nav-bar' className='navMenu'>
          <Menu className='navMenu' size='large' borderless={true} fixed='top'>
-
            <Menu.Menu position='right' className='navMenu' >
              { this.items.map( item => {
                  return (
@@ -27,7 +26,9 @@ class NavBar extends React.Component {
                      key={item.key}
                      active={activeItem === item.name}
                    >
-                     {item.name}
+                     <a href={`#${item.name}`}>
+                      {item.name}
+                     </a>
                    </Menu.Item>
                  )
                })
@@ -37,10 +38,7 @@ class NavBar extends React.Component {
        </div>
     )
  }
-  // <Menu.Item className='navItem'>Home</Menu.Item>
-  // <Menu.Item className='navItem'>About</Menu.Item>
-  // <Menu.Item className='navItem'>Projects</Menu.Item>
-  // <Menu.Item className='navItem'>Contact</Menu.Item>
+
 
 }
 

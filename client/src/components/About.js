@@ -1,11 +1,10 @@
 import React from 'react';
-import { List } from 'semantic-ui-react';
 import Arrow from './Arrow';
 
 const About = () => {
   return(
     <div className='compContainer'>
-      <div className='about'>
+      <div className='about' id='ABOUT'>
         <h1>About Me</h1>
         <p> {'I am an ex-banker with 4 years of experience in improving process efficiency, optimizing client performance reports and analyzing large private equity fund statistics. \
          I have recently attended and graduated from a bootcamp focusing on JavaScript, React/Redux, MongoDB and Node. ' } </p>
