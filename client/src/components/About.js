@@ -13,7 +13,7 @@ const About = () => {
          I’m looking for an opportunity on front end web development. ' }
         </p>
         <div className='switchCon'>
-          <Arrow page='ABOUT'/>
+          <Arrow page={1}/>
         </div>
       </div>
     </div>

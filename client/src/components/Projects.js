@@ -19,7 +19,7 @@ const Projects = () => {
           </Carousel.Item>
         </Carousel>
         <div className='switchCon' style={{ marginTop: '2%'}}>
-          <Arrow page='PROJECTS' />
+          <Arrow page={2} />
         </div>
       </div>
     </div>

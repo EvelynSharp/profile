@@ -9,7 +9,7 @@ const Home = () => {
         <p>A former i-banker looking to enter Tech world.</p>
       </div>
       <div className='switchCon' style={{ marginTop: '25%'}}>
-        <Arrow page='HOME' />
+        <Arrow page={0} />
       </div>
     </div>
   )
