@@ -6,15 +6,19 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import SlideContainer from './components/SlideContainer'
 import _ from 'lodash';
+import Scroll from 'react-scroll';
+import {scroller} from 'react-scroll';
+
 
 class App extends React.Component {
   defaultData = { home: true, about: false, projects: false, contact: false }
-  cleanData = { home: false, about: false, projects: false, contact: false }
+  // cleanData = { home: false, about: false, projects: false, contact: false }
   state={ ...this.defaultData }
 
   componentDidMount = () => {
+    let scroll = Scroll.animateScroll;
+    scroll.scrollToTop();
     this.setState({...this.defaultData});
-    document.body.scrollTop = 0;
   }
 
   setActivePage = (page, ifVisible) => {
@@ -27,18 +31,18 @@ class App extends React.Component {
     return nameMap[trueIndex];
   }
 
-  setActiveByClick = (page) => {
-    this.setState( {...this.cleanData, [page]: true} )
-  }
+  // setActiveByClick = (page) => {
+  //   this.setState( {...this.cleanData, [page]: true} )
+  // }
 
   render() {
     return (
       <div>
-        <NavBar activePage={this.findActivePage()} setActiveByClick={this.setActiveByClick}/>
-        <SlideContainer setActivePage={this.setActivePage} page='home'><Home page={'home'}/></SlideContainer>
-        <SlideContainer setActivePage={this.setActivePage} page='about'><About/></SlideContainer>
-        <SlideContainer setActivePage={this.setActivePage} page='projects'><Projects/></SlideContainer>
-        <SlideContainer setActivePage={this.setActivePage} page='contact'><Contact/></SlideContainer>
+        <NavBar activePage={this.findActivePage()} />
+        <Scroll.Element name="home"><Home page={'home'}/></Scroll.Element>
+        <Scroll.Element name="about"><About/></Scroll.Element>
+        <Scroll.Element name="projects"><Projects/></Scroll.Element>
+        <Scroll.Element name="contact"><Contact/></Scroll.Element>
       </div>
     )
   }

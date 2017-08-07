@@ -1,8 +1,10 @@
 import React from 'react';
 import { Menu } from 'semantic-ui-react';
+import Scroll from 'react-scroll';
+import {scroller} from 'react-scroll';
 
 class NavBar extends React.Component {
-  state = { activeItem: 'home'}
+  state = { activeItem: ''}
 
   items = [
     {name: 'home', key: 'HOME'},
@@ -11,20 +13,24 @@ class NavBar extends React.Component {
     {name: 'contact', key: 'CONTACT'}
   ]
 
-  componentWillReceiveProps = () => {
-    let { activePage } = this.props;
-    if (activePage)
-      this.changeActive(activePage)
-  }
+  // componentWillReceiveProps = () => {
+  //   let { activePage } = this.props;
+  //   if (activePage)
+  //     this.changeActive(activePage)
+  // }
 
   changeActive = ( activeItem ) => {
     this.setState({ activeItem });
   }
 
-  handleClick = (pageName) => {
-    this.props.setActiveByClick(pageName);
-    this.changeActive(pageName);
-  }
+  // handleClick = (pageName) => {
+  //   this.props.setActiveByClick(pageName);
+  //   this.changeActive(pageName);
+  // }
+
+
+  // active={activeItem === item.name}
+  // style={activeItem === item.name? {backgroundColor: 'rgba(73, 73, 73, 0.5)' } : null}
 
   render() {
     let { activeItem } = this.state;
@@ -34,16 +40,16 @@ class NavBar extends React.Component {
            <Menu.Menu position='right' className='navMenu' >
              { this.items.map( item => {
                  return (
-                   <a onClick={() => this.handleClick(item.name)} href={`#${item.name}`} key={item.key} >
+                   <Scroll.Link key={item.key} offset={50} activeClass="active" to={item.name} spy={true} smooth={true} duration={500} delay={200}>
                      <Menu.Item
+                       key={item.key}
                        className='navItem'
                        name={item.name}
-                       active={activeItem === item.name}
-                       style={activeItem === item.name? {backgroundColor: 'rgba(73, 73, 73, 0.5)' } : null}
+
                      >
                       {item.key}
                      </Menu.Item>
-                   </a>
+                   </Scroll.Link>
                  )
                })
              }

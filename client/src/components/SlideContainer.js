@@ -1,16 +1,16 @@
 import React from 'react';
-import WithinViewport from 'react-within-viewport'
+
 
 class SlideContainer extends React.Component {
   state={ height: 500}
 
   componentDidMount = () => {
-    let {inViewport, setActivePage, page} = this.props
-    if( typeof window !== 'undefined' )
-      window.addEventListener('scroll', () => { setActivePage(page, this.props.inViewport)}, true)
-    this.findHeight();
-    if( typeof window !== 'undefined' )
-      window.addEventListener('resize', this.findHeight, true)
+    // let {inViewport, setActivePage, page} = this.props
+    // if( typeof window !== 'undefined' )
+    //   window.addEventListener('scroll', () => { setActivePage(page, this.props.inViewport)}, true)
+    // this.findHeight();
+    // if( typeof window !== 'undefined' )
+    //   window.addEventListener('resize', this.findHeight, true)
   }
 
   findHeight = () => {
@@ -32,4 +32,4 @@ class SlideContainer extends React.Component {
   }
 }
 
-export default WithinViewport()(SlideContainer);
+export default SlideContainer;
