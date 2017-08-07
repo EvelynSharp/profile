@@ -2,13 +2,13 @@ import React from 'react';
 import { Menu } from 'semantic-ui-react';
 
 class NavBar extends React.Component {
-  state = { activeItem: 'HOME'}
+  state = { activeItem: 'home'}
 
   items = [
-    {name: 'HOME', key: 'Home'},
-    {name: 'ABOUT', key: 'About'},
-    {name: 'PROJECTS', key: 'Projects'},
-    {name: 'CONTACT', key: 'Contact'}
+    {name: 'home', key: 'HOME'},
+    {name: 'about', key: 'ABOUT'},
+    {name: 'projects', key: 'PROJECTS'},
+    {name: 'contact', key: 'CONTACT'}
   ]
 
   componentWillReceiveProps = () => {
@@ -21,6 +21,11 @@ class NavBar extends React.Component {
     this.setState({ activeItem });
   }
 
+  handleClick = (pageName) => {
+    this.props.setActiveByClick(pageName);
+    this.changeActive(pageName);
+  }
+
   render() {
     let { activeItem } = this.state;
     return(
@@ -29,13 +34,14 @@ class NavBar extends React.Component {
            <Menu.Menu position='right' className='navMenu' >
              { this.items.map( item => {
                  return (
-                   <a href={`#${item.name}`} key={item.key}>
+                   <a onClick={() => this.handleClick(item.name)} href={`#${item.name}`} key={item.key} >
                      <Menu.Item
                        className='navItem'
                        name={item.name}
                        active={activeItem === item.name}
+                       style={activeItem === item.name? {backgroundColor: 'rgba(73, 73, 73, 0.5)' } : null}
                      >
-                      {item.name}
+                      {item.key}
                      </Menu.Item>
                    </a>
                  )

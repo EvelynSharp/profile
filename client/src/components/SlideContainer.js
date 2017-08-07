@@ -7,7 +7,7 @@ class SlideContainer extends React.Component {
   componentDidMount = () => {
     let {inViewport, setActivePage, page} = this.props
     if( typeof window !== 'undefined' )
-      window.addEventListener('scroll', () => {setActivePage(page, this.props.inViewport)}, true)
+      window.addEventListener('scroll', () => { setActivePage(page, this.props.inViewport)}, true)
     this.findHeight();
     if( typeof window !== 'undefined' )
       window.addEventListener('resize', this.findHeight, true)
