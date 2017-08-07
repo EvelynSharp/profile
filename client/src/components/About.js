@@ -3,10 +3,10 @@ import Arrow from './Arrow';
 
 
 
-const About = () => {
+const About = ({setActivePage}) => {
     return(
       <div className='compContainer'>
-        <div className='about' id='about'>
+        <div className='about' >
           <h1>About Me</h1>
           <p> {'I am an ex-banker with 4 years of experience in improving process efficiency, optimizing client performance reports and analyzing large private equity fund statistics. \
            I have recently attended and graduated from a bootcamp focusing on JavaScript, React/Redux, MongoDB and Node. ' } </p>
@@ -15,7 +15,7 @@ const About = () => {
            I’m looking for an opportunity on front end web development. ' }
           </p>
           <div className='switchCon'>
-            <Arrow page={1}/>
+            <Arrow page={2} setActivePage={setActivePage} />
           </div>
         </div>
       </div>

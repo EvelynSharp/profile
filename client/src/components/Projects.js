@@ -4,10 +4,10 @@ import { projectImgs } from '../projectImgs';
 import Arrow from './Arrow';
 
 
-const Projects = () => {
+const Projects = ({setActivePage}) => {
   return(
     <div className='compContainer'>
-      <div className='projects' id='projects'>
+      <div className='projects'>
         <div>
           <h1>My Work</h1>
         </div>
@@ -19,7 +19,7 @@ const Projects = () => {
           </Carousel.Item>
         </Carousel>
         <div className='switchCon' style={{ marginTop: '2%'}}>
-          <Arrow page={2} />
+          <Arrow page={3} setActivePage={setActivePage} />
         </div>
       </div>
     </div>

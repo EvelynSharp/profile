@@ -2,11 +2,11 @@ import React from 'react';
 import { Button, Icon, Grid } from 'semantic-ui-react';
 import Arrow from './Arrow';
 
-const Contact = () => {
+const Contact = ({setActivePage}) => {
 
   return(
     <div className='compContainer'>
-      <div className='contact' id='contact'>
+      <div className='contact' >
         <h1>Contact Me</h1>
         <p>FEEL FREE TO SEND ME A MESSAGE!</p>
         <p className='profileInv'>CHECK OUT MY PROFILE</p>
@@ -29,7 +29,7 @@ const Contact = () => {
           <Grid.Column width={4} />
         </Grid>
         <div className='switchCon' style={{ marginTop: '5%'}}>
-          <Arrow page={3}/>
+          <Arrow page={0} setActivePage={setActivePage}/>
         </div>
       </div>
     </div>

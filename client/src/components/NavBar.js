@@ -1,7 +1,6 @@
 import React from 'react';
 import { Menu } from 'semantic-ui-react';
 import Scroll from 'react-scroll';
-import {scroller} from 'react-scroll';
 
 class NavBar extends React.Component {
   state = { activeItem: ''}
@@ -13,11 +12,11 @@ class NavBar extends React.Component {
     {name: 'contact', key: 'CONTACT'}
   ]
 
-  // componentWillReceiveProps = () => {
-  //   let { activePage } = this.props;
-  //   if (activePage)
-  //     this.changeActive(activePage)
-  // }
+  componentWillUpdate = () => {
+    let { activePage } = this.props;
+    if (activePage)
+      this.changeActive(activePage)
+  }
 
   changeActive = ( activeItem ) => {
     this.setState({ activeItem });
@@ -40,12 +39,15 @@ class NavBar extends React.Component {
            <Menu.Menu position='right' className='navMenu' >
              { this.items.map( item => {
                  return (
-                   <Scroll.Link key={item.key} offset={50} activeClass="active" to={item.name} spy={true} smooth={true} duration={500} delay={200}>
+                   <Scroll.Link
+                      key={item.key}
+                      offset={1} activeClass="active"
+                      to={item.name} spy={true} smooth={true} duration={500} delay={200}
+                   >
                      <Menu.Item
                        key={item.key}
                        className='navItem'
                        name={item.name}
-
                      >
                       {item.key}
                      </Menu.Item>
