@@ -17,6 +17,11 @@ const Projects = () => {
               <img alt='900x500' src={projectImgs[0].src}/>
             </a>
           </Carousel.Item>
+          <Carousel.Item>
+            <a href='https://github.com/EvelynSharp/redux-practice-2' target='_blank' rel="noopener noreferrer">
+              <img alt='900x500' src={projectImgs[1].src}/>
+            </a>
+          </Carousel.Item>
         </Carousel>
         <div className='switchCon' style={{ marginTop: '2%'}}>
           <Arrow page={3}/>

@@ -67,7 +67,7 @@ h1 {
 .home {
   background:url(images/Img1.jpeg);
   background-position: center;
-  background-size:contain;
+  background-size:cover;
   overflow: hidden;
 }
 
