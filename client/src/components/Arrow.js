@@ -10,7 +10,7 @@ const Arrow = ({ page, setActivePage, dispatch }) => {
     <div className='arrowCon'>
       <Scroll.Link
         to={ pageArr[page] }
-        spy={true} smooth={true} duration={500} delay={200} offset={30}
+        spy={true} smooth={true} duration={500} delay={200}
         style={{ textDecoration: 'none'}}
         onSetActive={ () => dispatch(setPage(pageArr[page]))}
       >

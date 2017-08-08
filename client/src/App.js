@@ -45,10 +45,10 @@ class App extends React.Component {
     return (
       <div>
         <NavBar activePage={this.state.page}/>
-        <Scroll.Element name="home"><Home setActivePage={this.setActivePage}/></Scroll.Element>
-        <Scroll.Element name="about"><About setActivePage={this.setActivePage}/></Scroll.Element>
-        <Scroll.Element name="projects"><Projects setActivePage={this.setActivePage}/></Scroll.Element>
-        <Scroll.Element name="contact"><Contact setActivePage={this.setActivePage}/></Scroll.Element>
+        <Scroll.Element className='red' name="home"><Home setActivePage={this.setActivePage}/></Scroll.Element>
+        <Scroll.Element className='red' name="about"><About setActivePage={this.setActivePage}/></Scroll.Element>
+        <Scroll.Element className='red' name="projects"><Projects setActivePage={this.setActivePage}/></Scroll.Element>
+        <Scroll.Element className='red' name="contact"><Contact setActivePage={this.setActivePage}/></Scroll.Element>
       </div>
     )
   }
