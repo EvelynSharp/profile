@@ -33,11 +33,11 @@ class App extends React.Component {
       <div>
         <NavBar />
         <Scroll.Element name="home"><Home /></Scroll.Element>
-        <div style={{ border: '1px solid rgba(73, 73, 73, 0.5)'}}></div>
+        <div style={{ border: '1px solid rgba(9, 9, 9, 1)'}}></div>
         <Scroll.Element name="about"><About /></Scroll.Element>
-        <div style={{ border: '1px solid rgba(73, 73, 73, 0.5)'}}></div>
+        <div style={{ border: '1px solid rgba(9, 9, 9, 1)'}}></div>
         <Scroll.Element name="projects"><Projects /></Scroll.Element>
-        <div style={{ border: '1px solid rgba(73, 73, 73, 0.5)'}}></div>
+        <div style={{ border: '1px solid rgba(9, 9, 9, 1)'}}></div>
         <Scroll.Element name="contact"><Contact /></Scroll.Element>
       </div>
     )
