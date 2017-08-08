@@ -1,9 +1,11 @@
 import React from 'react';
 import { Menu } from 'semantic-ui-react';
 import Scroll from 'react-scroll';
+import { connect } from 'react-redux';
+import { setPage } from '../actions/page';
 
 class NavBar extends React.Component {
-  state = { activeItem: ''}
+  state = { activeItem: 'home'}
 
   items = [
     {name: 'home', key: 'HOME'},
@@ -12,27 +14,27 @@ class NavBar extends React.Component {
     {name: 'contact', key: 'CONTACT'}
   ]
 
-  componentWillUpdate = () => {
-    let { activePage } = this.props;
-    if (activePage)
-      this.changeActive(activePage)
+  componentDidMount = () => {
+    this.props.dispatch(setPage(this.state.activeItem));
   }
 
   changeActive = ( activeItem ) => {
     this.setState({ activeItem });
   }
 
-  // handleClick = (pageName) => {
-  //   this.props.setActiveByClick(pageName);
-  //   this.changeActive(pageName);
-  // }
+  handleClick = (pageName) => {
+    this.changeActive(pageName);
+    this.props.dispatch(setPage(pageName));
+    return true;
+  }
+
+// <a href={`#${item.name}`} onClick={() => this.handleClick(item.name)} style={{ textDecoration: 'none'}} key={item.key}>
 
 
-  // active={activeItem === item.name}
-  // style={activeItem === item.name? {backgroundColor: 'rgba(73, 73, 73, 0.5)' } : null}
 
   render() {
     let { activeItem } = this.state;
+    let { page, dispatch } = this.props;
     return(
        <div className='nav-bar' className='navMenu'>
          <Menu className='navMenu' size='large' borderless={true} fixed='top'>
@@ -43,11 +45,14 @@ class NavBar extends React.Component {
                       key={item.key}
                       offset={1} activeClass="active"
                       to={item.name} spy={true} smooth={true} duration={500} delay={200}
+                      onSetActive={ () => dispatch(setPage(item.name))}
                    >
                      <Menu.Item
                        key={item.key}
                        className='navItem'
                        name={item.name}
+                       active={page === item.name}
+                       style={page === item.name? {backgroundColor: 'rgba(73, 73, 73, 0.5)' } : null}
                      >
                       {item.key}
                      </Menu.Item>
@@ -60,8 +65,10 @@ class NavBar extends React.Component {
        </div>
     )
  }
-
-
 }
 
-export default NavBar;
+const mapStateToProps = (state) => {
+  return { page: state.page}
+}
+
+export default connect(mapStateToProps)(NavBar);

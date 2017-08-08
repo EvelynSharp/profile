@@ -6,7 +6,7 @@ const Contact = ({setActivePage}) => {
 
   return(
     <div className='compContainer'>
-      <div className='contact' >
+      <div className='contact' id='contact'>
         <h1>Contact Me</h1>
         <p>FEEL FREE TO SEND ME A MESSAGE!</p>
         <p className='profileInv'>CHECK OUT MY PROFILE</p>

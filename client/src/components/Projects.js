@@ -7,7 +7,7 @@ import Arrow from './Arrow';
 const Projects = ({setActivePage}) => {
   return(
     <div className='compContainer'>
-      <div className='projects'>
+      <div className='projects' id='projects'>
         <div>
           <h1>My Work</h1>
         </div>

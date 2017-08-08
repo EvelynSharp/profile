@@ -16,6 +16,24 @@ class App extends React.Component {
   componentDidMount = () => {
     let scroll = Scroll.animateScroll;
     scroll.scrollToTop();
+    Scroll.Events.scrollEvent.register('begin', function() {
+      console.log("begin", arguments);
+    });
+
+    Scroll.Events.scrollEvent.register('end', function() {
+      console.log("end", arguments);
+    });
+
+    Scroll.scrollSpy.update();
+    // let scroller = Scroll.scroller;
+    // scroller.scrollTo('home', {
+    //   offset: 1
+    // });
+  }
+
+  componentWillUnmount() {
+    Scroll.Events.scrollEvent.remove('begin');
+    Scroll.Events.scrollEvent.remove('end');
   }
 
   setActivePage = (page) => {
