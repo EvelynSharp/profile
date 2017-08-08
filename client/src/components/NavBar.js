@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { setPage } from '../actions/page';
 
 class NavBar extends React.Component {
-  state = { activeItem: 'home'}
+  state = { activeItem: ''}
 
   items = [
     {name: 'home', key: 'HOME'},
@@ -23,6 +23,7 @@ class NavBar extends React.Component {
   }
 
   handleClick = (pageName) => {
+
     this.changeActive(pageName);
     this.props.dispatch(setPage(pageName));
     return true;
@@ -35,14 +36,14 @@ class NavBar extends React.Component {
   render() {
     let { activeItem } = this.state;
     let { page, dispatch } = this.props;
+    // console.log(window.scrollY)
     return(
        <div className='nav-bar' className='navMenu'>
-         <Menu className='navMenu' size='large' borderless={true} fixed='top'>
+         <Menu className='navMenu' size='large' fixed='top'>
            <Menu.Menu position='right' className='navMenu' >
              { this.items.map( item => {
                  return (
                    <Scroll.Link
-                      isDynamic={true}
                       key={item.key}
                       activeClass="active"
                       to={item.name} spy={true} smooth={true} duration={500} delay={200}

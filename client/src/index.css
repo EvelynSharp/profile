@@ -4,7 +4,6 @@ body {
   padding: 0;
   font-family: sans-serif;
   color: white;
-  border: 1px solid transparent;
 }
 
 h1 {
@@ -25,8 +24,8 @@ h1 {
 
 .navMenu {
   background: rgba(0,0,0,0) !important;
-  padding-top: 0.1%;
-  padding-right: 1%;
+  padding-top: 0;
+  padding-right: 0;
   border: none !important;
   box-shadow: none !important;
 }
@@ -66,16 +65,10 @@ h1 {
 /* styles for home page */
 
 .home {
-  /*-webkit-filter: grayscale(80%);
-    filter: grayscale(80%);*/
-  background:
-    /*linear-gradient(
-        rgba(0, 0, 0, 0.1),
-        rgba(0, 0, 0, 0.1)
-        ),*/
-      url(images/Img1.jpeg);
+  background:url(images/Img1.jpeg);
   background-position: center;
-  background-size: cover;
+  background-size:contain;
+  overflow: hidden;
 }
 
 .homeTxt {
@@ -86,6 +79,7 @@ h1 {
   -webkit-text-fill-color: white;
   /*-webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: rgb(224, 136, 139);*/
+  overflow: hidden;
 }
 
 
