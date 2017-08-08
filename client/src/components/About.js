@@ -1,9 +1,7 @@
 import React from 'react';
 import Arrow from './Arrow';
 
-
-
-const About = ({setActivePage}) => {
+const About = () => {
     return(
       <div className='compContainer'>
         <div className='about' id='about'>
@@ -15,7 +13,7 @@ const About = ({setActivePage}) => {
            I’m looking for an opportunity on front end web development. ' }
           </p>
           <div className='switchCon'>
-            <Arrow page={2} setActivePage={setActivePage} />
+            <Arrow page={2}  />
           </div>
         </div>
       </div>

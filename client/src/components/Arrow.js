@@ -4,7 +4,7 @@ import Scroll from 'react-scroll';
 import { connect } from 'react-redux';
 import { setPage } from '../actions/page';
         // onSetActive={ () => setActivePage(pageArr[page]) }
-const Arrow = ({ page, setActivePage, dispatch }) => {
+const Arrow = ({ page, dispatch }) => {
   const pageArr = ['home', 'about', 'projects', 'contact' ]
   return(
     <div className='arrowCon'>

@@ -1,5 +1,6 @@
 export const setPage = (page) => {
   return(dispatch) => {
-    dispatch({ type: 'PAGE', page})
+      dispatch({ type: 'PAGE', page})
+
   }
 }

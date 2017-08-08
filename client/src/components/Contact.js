@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Icon, Grid } from 'semantic-ui-react';
 import Arrow from './Arrow';
 
-const Contact = ({setActivePage}) => {
+const Contact = () => {
 
   return(
     <div className='compContainer'>
@@ -29,7 +29,7 @@ const Contact = ({setActivePage}) => {
           <Grid.Column width={4} />
         </Grid>
         <div className='switchCon' style={{ marginTop: '5%'}}>
-          <Arrow page={0} setActivePage={setActivePage}/>
+          <Arrow page={0}/>
         </div>
       </div>
     </div>

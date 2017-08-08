@@ -9,9 +9,7 @@ import Scroll from 'react-scroll';
 
 
 class App extends React.Component {
-  defaultData = { page: '' }
 
-  state={ ...this.defaultData }
 
   componentDidMount = () => {
     let scroll = Scroll.animateScroll;
@@ -19,16 +17,10 @@ class App extends React.Component {
     Scroll.Events.scrollEvent.register('begin', function() {
       console.log("begin", arguments);
     });
-
     Scroll.Events.scrollEvent.register('end', function() {
       console.log("end", arguments);
     });
-
     Scroll.scrollSpy.update();
-    // let scroller = Scroll.scroller;
-    // scroller.scrollTo('home', {
-    //   offset: 1
-    // });
   }
 
   componentWillUnmount() {
@@ -36,19 +28,17 @@ class App extends React.Component {
     Scroll.Events.scrollEvent.remove('end');
   }
 
-  setActivePage = (page) => {
-    console.log(page)
-    this.setState( { page } )
-  }
-
   render() {
     return (
       <div>
-        <NavBar activePage={this.state.page}/>
-        <Scroll.Element name="home"><Home setActivePage={this.setActivePage}/></Scroll.Element>
-        <Scroll.Element name="about"><About setActivePage={this.setActivePage}/></Scroll.Element>
-        <Scroll.Element name="projects"><Projects setActivePage={this.setActivePage}/></Scroll.Element>
-        <Scroll.Element name="contact"><Contact setActivePage={this.setActivePage}/></Scroll.Element>
+        <NavBar />
+        <Scroll.Element name="home"><Home /></Scroll.Element>
+        <div style={{ border: '1px solid rgba(73, 73, 73, 0.5)'}}></div>
+        <Scroll.Element name="about"><About /></Scroll.Element>
+        <div style={{ border: '1px solid rgba(73, 73, 73, 0.5)'}}></div>
+        <Scroll.Element name="projects"><Projects /></Scroll.Element>
+        <div style={{ border: '1px solid rgba(73, 73, 73, 0.5)'}}></div>
+        <Scroll.Element name="contact"><Contact /></Scroll.Element>
       </div>
     )
   }
