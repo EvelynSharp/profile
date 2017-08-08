@@ -43,7 +43,7 @@ class NavBar extends React.Component {
                  return (
                    <Scroll.Link
                       key={item.key}
-                      offset={1} activeClass="active"
+                      offset={30} activeClass="active"
                       to={item.name} spy={true} smooth={true} duration={500} delay={200}
                       onSetActive={ () => dispatch(setPage(item.name))}
                    >
