@@ -42,8 +42,9 @@ class NavBar extends React.Component {
              { this.items.map( item => {
                  return (
                    <Scroll.Link
+                      isDynamic={true}
                       key={item.key}
-                       activeClass="active"
+                      activeClass="active"
                       to={item.name} spy={true} smooth={true} duration={500} delay={200}
                       onSetActive={ () => dispatch(setPage(item.name))}
                    >
