@@ -9,6 +9,7 @@ const Arrow = ({ page, setActivePage, dispatch }) => {
   return(
     <div className='arrowCon'>
       <Scroll.Link
+        isDynamic={true}
         to={ pageArr[page] }
         spy={true} smooth={true} duration={500} delay={200}
         style={{ textDecoration: 'none'}}
