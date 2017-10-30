@@ -13,13 +13,18 @@ const Projects = () => {
         </div>
         <Carousel className='carouselCon'>
           <Carousel.Item>
-            <a href='https://eventech-capstone.herokuapp.com/' target='_blank' rel="noopener noreferrer">
+            <a href='https://es-restaurant2.herokuapp.com/' target='_blank' rel="noopener noreferrer">
               <img alt='900x500' src={projectImgs[0].src}/>
             </a>
           </Carousel.Item>
           <Carousel.Item>
-            <a href='https://github.com/EvelynSharp/redux-practice-2' target='_blank' rel="noopener noreferrer">
+            <a href='https://eventech-capstone.herokuapp.com/' target='_blank' rel="noopener noreferrer">
               <img alt='900x500' src={projectImgs[1].src}/>
+            </a>
+          </Carousel.Item>
+          <Carousel.Item>
+            <a href='https://github.com/EvelynSharp/redux-practice-2' target='_blank' rel="noopener noreferrer">
+              <img alt='900x500' src={projectImgs[2].src}/>
             </a>
           </Carousel.Item>
         </Carousel>
